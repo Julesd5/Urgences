@@ -16,5 +16,5 @@ class GestionUrgence:
     def traiter_patient(self):
         return self._structure.defiler()
 
-
-    
+    def est_vide(self) -> bool:
+        return self._structure.est_vide()

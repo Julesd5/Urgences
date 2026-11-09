@@ -12,8 +12,8 @@ class StructureUrgences:
 
     def __repr__(self) -> str:
         return (
-            f"0:{self._prio0!r}, 1:{self._prio1!r}, 2:{self._prio2!r}, "
-            f"3:{self._prio3!r}, 4:{self._prio4!r}"
+            f"0:{self._prio0!r}\n1:{self._prio1!r}\n2:{self._prio2!r}\n"
+            f"3:{self._prio3!r}\n4:{self._prio4!r}\n"
         )
     
     def est_vide(self) -> bool:
