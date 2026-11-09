@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sl29.urgences"
+version = "0.1"
+description = "Un projet pour enseigner la POO et les files"
+authors = [
+    { name = "Jules Demay", email = "demay-j@saint-louis29.net" },
+]
+readme = "README.rst"
+requires-python = ">=3.6"
+license = { file = "LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "setuptools",
+    "toml",
+    "m2r2",
+    "sl29.structures.queue",
+]
+
+[project.urls]
+Homepage = "https://github.com/Julesd5/Urgences/tree/main"
+
+[tool.setuptools]
+packages = ["sl29.urgences"]
+package-dir = { "" = "src" }
+
+# Configuration pour Sphinx
+[tool.sphinx]
+source-dir = "doc"
+build-dir = "doc/_build"
+
+[project.optional-dependencies]
+# Dépendances de documentation(Sphinx et extensions)
+doc = [
+    "sphinx>=7.0.0",  # Sphinx pour la documentation
+    "sphinx-rtd-theme>=1.0.0",  # Thème ReadTheDocs pour Sphinx
+    "sphinx-autodoc-typehints>=1.0.0",  # Support des annotations de type
+]
+
+# Dépendances de développement
+dev = [
+    "ipykernel",
+    # Ajoutez ici d'autres dépendances de développement
+]
+
+# Dépendances de tests
+test = [
+    "pytest",
+    "pytest-cov",
+    # Ajoutez ici d'autres dépendances de tests
+]
+
+[tool.pytest.ini_options]
+addopts = ["--import-mode=importlib"]
+pythonpath = ["src"]
